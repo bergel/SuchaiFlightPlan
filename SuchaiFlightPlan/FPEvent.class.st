@@ -11,6 +11,16 @@ Class {
 	#category : #SuchaiFlightPlan
 }
 
+{ #category : #accessing }
+FPEvent >> endTime [
+	^ endTime
+]
+
+{ #category : #'as yet unclassified' }
+FPEvent >> endTimeAsUnixEpoch [
+	^ endTime asUnixTime
+]
+
 { #category : #'as yet unclassified' }
 FPEvent >> fillFrom: separatedRow [
 
@@ -24,6 +34,16 @@ FPEvent >> fillFrom: separatedRow [
 	endTime := DateAndTime fromString: separatedRow seventh.	
 ]
 
+{ #category : #accessing }
+FPEvent >> fromString [
+	^ fromString
+]
+
+{ #category : #accessing }
+FPEvent >> fromString: anObject [
+	fromString := anObject
+]
+
 { #category : #printing }
 FPEvent >> printOn: str [
 	str nextPut: $<.
@@ -31,4 +51,24 @@ FPEvent >> printOn: str [
 	str nextPutAll: ' <-> '.
 	toString ifNotNil: [ str nextPutAll: toString ].
 	str nextPut: $>
+]
+
+{ #category : #accessing }
+FPEvent >> startTime [
+	^ startTime
+]
+
+{ #category : #'as yet unclassified' }
+FPEvent >> startTimeAsUnixEpoch [
+	^ startTime asUnixTime
+]
+
+{ #category : #accessing }
+FPEvent >> toString [
+	^ toString
+]
+
+{ #category : #accessing }
+FPEvent >> toString: anObject [
+	toString := anObject
 ]

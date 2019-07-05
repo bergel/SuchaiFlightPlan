@@ -446,3 +446,12 @@ FlightPlanTest >> data [
 32	33	526.856	S2	2	26 Jun 2019 10:35:16.399	26 Jun 2019 10:44:03.255	SCL	3
 33	34	674.015	S2	2	26 Jun 2019 12:08:09.084	26 Jun 2019 12:19:23.099	SCL	3'
 ]
+
+{ #category : #tests }
+FlightPlanTest >> testExampleMission [
+
+	| model |
+	model := FPModel new.
+	model exampleMission.
+"	self halt."
+]
