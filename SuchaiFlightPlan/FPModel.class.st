@@ -43,7 +43,7 @@ FPModel >> exampleFull [
 	<script: 'self new exampleFull inspect'>
 	| model g |
 	model := FPModel new.
-	model exampleLongMission2.
+	model exampleMission.
 
 	g := GAEngine new.
 	g endIfNoImprovementFor: 10.
@@ -144,9 +144,9 @@ FPModel >> exampleMission [
 	
 	self addRule: (FPRule from: 'SCL' to: 'S1'). "perform send instruction"
 	self addRule: (FPRule from: 'S1' to: 'S2'). "Send mission to S2"
-	self addRule: (FPRule from: 'S2' to: 'CAL').
-	self addRule: (FPRule from: 'S2' to: 'S1').
-	self addRule: (FPRule from: 'S1' to: 'SCL').
+	self addRule: (FPRule from: 'S2' to: 'CAL'). "S2 takes picture of California"
+	self addRule: (FPRule from: 'S2' to: 'S1'). "S2 sends the picture to S1"
+	self addRule: (FPRule from: 'S1' to: 'SCL'). "S1 sends the picture to the ground"
 	
 	self parseText: FlightPlanTest new data.
 	self processEvents.
